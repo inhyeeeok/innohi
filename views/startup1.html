@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>한진정보통신 오픈이노베이션 프로그램 - innoHI</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- =======================================================
+  * Template Name: Arsha - v4.3.0
+  * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  <script src="../assets/js/common.js"></script>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top header-inner-pages">
+  	<script src="../assets/js/header.js"></script>
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  	 
+  </header><!-- End Header -->
+
+
+	<main id="main">
+
+		<!-- ======= Banner ======= -->
+		<!-- <div>
+			<img src="../assets/img/innohi/banner_org1.jpg" class="img-fluid" alt="">
+		</div> -->
+		  <!-- End Banner -->
+
+		  <!-- ======= Breadcrumbs ======= -->
+		  <section id="breadcrumbs" class="breadcrumbs" style="background-color: white;">
+			<div class="container">
+			</div>
+		  </section>
+		  <!-- End Breadcrumbs -->
+
+		<!-- ======= About Us Section ======= -->
+		<section id="about" class="about">
+			<div class="container" data-aos="fade-up">
+	  
+			  <div class="section-title">
+				<h2 style="text-transform: capitalize;">스타트업 Archive</h2>
+				<img src="https://t1.daumcdn.net/cfile/tistory/2311B73D53FBDCC808" class="img-fluid" style=" height: 400px;"alt="">
+			  </div>
+	  
+			  <div class="row content">
+				<div class="col-lg-6">
+				  <p>
+					스타트업 & 지원기관의 투자라운딩 소식, 모집 소식,주요 뉴스 등 최신정보(DB)를 검색하고,구독과 알림을 통해 연결성을 강화합니다.
+				  </p>
+				  <ul>
+					<li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
+					<li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
+					<li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
+				  </ul>
+				</div>
+				<div class="col-lg-6 pt-4 pt-lg-0">
+				  <p>
+					Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+					velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+					culpa qui officia deserunt mollit anim id est laborum.
+				  </p>
+				  <a href="#" class="btn-learn-more">Learn More</a>
+				</div>
+			  </div>
+	  
+			</div>
+		</section><!-- End About Us Section -->
+		<!-- <section id="" class="inner-page">
+			<div class="container">
+				<div id="map" style="width: 100%;height: 400px;">
+				</div>
+			</div>
+		</section> -->
+
+		<section id="" class="inner-page">
+			<div class="container">
+				<table id="dataTable" class="type04" width="100%">
+				</table>
+			</div>
+		</section>
+	</main>
+	<!-- End #main -->
+
+	<!-- ======= Footer ======= -->
+  <footer id="footer">
+	<script src="../assets/js/footer.js"></script>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <script src="../assets/js/common copy.js"></script>
+  <script src="../assets/js/testData.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly&channel=2" async></script>
+  <script type="text/javascript">
+
+	var lang_kor = {
+		"decimal" : "",
+		"emptyTable" : "데이터가 없습니다.",
+		"info" : "_START_ - _END_ (총 _TOTAL_ 명)",
+		"infoEmpty" : "0명",
+		"infoFiltered" : "(전체 _MAX_ 명 중 검색결과)",
+		"infoPostFix" : "",
+		"thousands" : ",",
+		"lengthMenu" : "_MENU_ 개씩 보기",
+		"loadingRecords" : "로딩중...",
+		"processing" : "처리중...",
+		"search" : "검색 : ",
+		"zeroRecords" : "검색된 데이터가 없습니다.",
+		"paginate" : {
+			"first" : "첫 페이지",
+			"last" : "마지막 페이지",
+			"next" : "다음",
+			"previous" : "이전"
+		},
+		"aria" : {
+			"sortAscending" : " :  오름차순 정렬",
+			"sortDescending" : " :  내림차순 정렬"
+		}
+	};
+
+	   $(document).ready(function() {
+		   
+			var table = $('#dataTable').DataTable({
+			   data: testData.startupSample,
+			   columns: [
+				   { title: "회사명" , width: "15%" ,
+				   "render": function(data, type, row){
+                    /*
+                     * 다른 column의 값을 다루고 싶을 땐
+                     * row['COLUMN명'] 으로 꺼내쓸 수 있다.
+                     */
+                    if(type=='display'){
+						testData.startupSample.forEach((element, index, array) => {
+	//						console.log(element);
+						});
+                        data = '<a href="'+ 'startupDetail.html?' + row[4]+'">' + data + '</a>';
+                    }
+                    return data;
+				}},
+				   { title: "기술분야", width: "10%" },
+				   { title: "주요서비스", width: "75%" },
+				   { title: "분류", width: "20%" }
+			   ],
+			   language: lang_kor,
+			   responsive: true
+		   });
+
+			/* Column별 검색기능 추가 */
+			$('#dataTable_filter').prepend('<select id="select"></select>');
+			$('#dataTable > thead > tr').children().each(function (indexInArray, valueOfElement) { 
+				$('#select').append('<option>'+valueOfElement.innerHTML+'</option>');
+			});
+			
+			$('.dataTables_filter input').unbind().bind('keyup', function () {
+				var colIndex = document.querySelector('#select').selectedIndex;
+				table.column(colIndex).search(this.value).draw();
+			});
+
+			$('#dataTable > tbody > tr').unbind().bind('click', function () {
+	//			console.log(this)
+			});
+		}); 
+
+		let map;
+		let startupPosition = [
+				['서울역', 37.5546788, 126.9706069],
+				['서울특별시청', 37.5668260, 126.9786567],
+				['일본1', 36.20498404242774, 138.45017745572002],
+				['일본2', 34.1881589644197, 132.79413809855416],
+				['중국1', 34.449009599859984, 103.7375342111537],
+				['중국2', 27.08518840193695, 112.00182191101217],
+			];
+		let myLating = { lat: 37.5546788, lng: 126.9706069 }
+		function initMap() {
+			map = new google.maps.Map(document.getElementById("map"), {
+				center: myLating,
+				zoom: 3,
+			});
+
+			for (i = 0; i < startupPosition.length; i++) {
+				new google.maps.Marker({
+				position: new google.maps.LatLng(startupPosition[i][1], startupPosition[i][2]),
+				map,
+				title: startupPosition[i][0],
+  			});
+			}
+
+		}
+
+			var testData = {
+				startupData: [
+					{ "seq": "1", "company": "Neteera", "area": "medical", "field": "iot", "image": "../assets/img/clients/1.png" }
+					, { "seq": "2", "company": "Smedo", "area": "medical", "field": "analysis", "image": "../assets/img/clients/2.png" }
+					, { "seq": "3", "company": "HealthBeats", "area": "medical", "field": "iot", "image": "../assets/img/clients/3.png" }
+				]
+				, startupSample:
+					[
+						["Smedo", "데이터 분석", "비접촉 생체 신호 모니터링 서비스", "의료"],
+						["HealthBeats", "IoT", "원격 환자 모니터링 플랫폼", "의료"],
+						["Binah.ai", "AI", "비디오기반 바이탈사인 모니터링", "의료"],
+						["Nuralogix", "AI", "원격 환자 건강 모니터링 앱", "의료"],
+						["ContunUse Biometrics", "플랫폼 서비스", "AI 기반 비접촉식 건강 모니터링 플랫폼", "의료"],
+						["FundamentalVR", "플랫폼 서비스", "VR 서비스", "의료"],
+						["Proprio Vision", "플랫폼 서비스", "머신러닝, AR 기반 수술 정확도 향상 서비스", "의료"],
+						["OramaVR", "플랫폼 서비스", "헬스케어 VR  가상 훈련 플랫폼", "의료"],
+						["Surgical Theater", "플랫폼 서비스", "신경외과 수술전 리허설 플랫폼 ", "의료"],
+						["8chili", "플랫폼 서비스", "홀로그래픽 협업과 교육 훈련 서비스", "의료"],
+						["Dual Good Health", "플랫폼 서비스", "VR 기반 헬스케어 훈련 서비스", "의료"],
+						["Osso VR", "플랫폼 서비스", "VR 수술 시뮬레이션 플랫폼", "의료"],
+						["ImmersiveTouch", "플랫폼 서비스", "VR, AR, 햅틱 기술 기반 솔루션", "의료"],
+						["Circulor", "지속가능성", "공급망 추적 기술", "APAC SUMMIT"],
+						["Muuse", "지속가능성", "재활용 컵 대여 서비스", "APAC SUMMIT"],
+						["Sylvera", "지속가능성", "탄소 발생 모니터링 서비스", "APAC SUMMIT"],
+						["LISTEN FIELD", "VR", "농업용 수확 예측 플랫폼", "APAC SUMMIT"],
+						["GreenHope", "지속가능성", "바이오 플라스틱 소재 개발", "APAC SUMMIT"],
+						["Cropin ", "데이터 분석", "농업 생태계 관리 솔루션", "APAC SUMMIT"],
+						["Jumper.AI", "플랫폼 서비스", "대화형 상거래 및 광고 플랫폼", "APAC SUMMIT"],
+						["AVANA ", "플랫폼 서비스", "온라인 비즈니스 올인원 솔루션", "APAC SUMMIT"],
+						["Qiscus", "플랫폼 서비스", "Multi-Channel 채팅 플랫폼", "APAC SUMMIT"],
+						["Freed", "AI", "맞춤형 여행정보 제공 챗봇 솔루션", "APAC SUMMIT"],
+						["Imajin", "플랫폼 서비스", "제조를 위한 허브 플랫폼", "APAC SUMMIT"],
+						["RekoSistem", "지속가능성", "디지털 폐기물 수거 솔루션", "APAC SUMMIT"],
+						["Periksa", "데이터 분석", "의료기록 분석 솔루션", "APAC SUMMIT"],
+						["SPLIO", "핀테크", "모바일 지갑", "SUMMER SUMMIT"],
+						["SPLYT", "플랫폼 서비스", "예약 플랫폼", "SUMMER SUMMIT"],
+						["HOTEL RUNNER", "플랫폼 서비스", "세일즈 관리 플랫폼", "SUMMER SUMMIT"],
+						["KYTE", "플랫폼 서비스", "예약 플랫폼", "SUMMER SUMMIT"],
+						["LAVARTI", "플랫폼 서비스", "공항 서비스 솔루션", "SUMMER SUMMIT"],
+						["GRAPEVINE", "플랫폼 서비스", "예약 플랫폼", "SUMMER SUMMIT"],
+						["PAYPARC", "플랫폼 서비스", "예약 플랫폼", "SUMMER SUMMIT"],
+						["LIVN", "플랫폼 서비스", "예약 플랫폼", "SUMMER SUMMIT"],
+						["DUFFEL", "플랫폼 서비스", "예약 플랫폼", "SUMMER SUMMIT"],
+						["CHOOSE", "지속가능성", "탄소 추적 API 서비스", "SUMMER SUMMIT"],
+						["PATCH", "지속가능성", "탄소 방출량 계산 API 서비스", "SUMMER SUMMIT"],
+						["Thrust Carbon", "지속가능성", "탄소 배출량 계산 API", "SUMMER SUMMIT"],
+						["LaaSie", "데이터 분석", "Loyalty Program", "SUMMER SUMMIT"],
+						["ZYTLYN", "데이터 분석", "데이터 분석 플랫폼", "SUMMER SUMMIT"],
+						["BEYOND PRICING", "데이터 분석", "세일즈 관리 플랫폼", "SUMMER SUMMIT"],
+						["NETHONE", "데이터 분석", "고객 정보 분석 시스템", "SUMMER SUMMIT"],
+						["SEADRONIX", "플랫폼 서비스", "접안 모니터링 시스템", "NEXT RISE"],
+						["SEOUL ROBOTICS", "AI", "3D 컴퓨터 비전 시스템", "NEXT RISE"],
+						["지와이 네트웍스", "플랫폼 서비스", "현장관리 시스템", "NEXT RISE"],
+						["VOUCH", "AI", "AI 챗봇 기반의 디지털 컨시어지 솔루션", "NEXT RISE"],
+						["뷰런 테크놀로지", "자율주행", "LiDAR 인지 솔루션", "NEXT RISE"],
+						["LOPLAT", "플랫폼 서비스", "Wi-Fi Fingerprint기술을 활용한 사용자 위치 확인 솔루션", "NEXT RISE"],
+						["디토닉", "데이터 분석", "시공간 데이터 분석 솔루션", "NEXT RISE"],
+						["WILLOG", "IoT", "OTQ 태그를 통한 물류 이력관리", "NEXT RISE"],
+						["플랫폼베이스", "IoT", "스마트락", "NEXT RISE"],
+						["ARVIZON", "모빌리티", "차량용 블랙박스", "NEXT RISE"],
+						["ITED", "모빌리티", "투명 열선기술", "NEXT RISE"],
+						["마이크로 시스템즈", "모빌리티", "Anti Drop Glass", "NEXT RISE"],
+						["OneAire", "플랫폼 서비스", "항공 및 분석 디지털 솔루션", "Batch9 Selection Day"],
+						["ZestIOT", "IoT", "IoT/AI 기반 항공 플랫폼", "Batch9 Selection Day"],
+						["Airportr", "플랫폼 서비스", "온라인 수하물 체크인 및 배송 서비스", "Batch9 Selection Day"],
+						["Segment", "데이터 분석", "고객 데이터 분석 솔루션", "Batch9 Selection Day"],
+						[" Cloudleaf, Inc", "IoT", "디지털 공급망 솔루션", "Batch9 Selection Day"],
+						["project-44", "플랫폼 서비스", "배송 업체 및 제3자 물류를 위한 세계 최고의 물류 가시성 플랫폼", "Batch9 Selection Day"],
+						["Paanini", "업무 자동화", "Big Data, AI 기반의 통합 플랫폼을 제공하는 자동화 솔루션", "Batch9 Selection Day"],
+						["3Victors", "데이터 분석", "AI & 머신러닝을 이용한 대형 항공료 데이터 분석 시스템", "항공"],
+						["Veer Immersive Technologies INC.", "VR", "아시아 최초 공인 가상현실 승무원 항공 안전 훈련기", "항공"],
+						["Swae", "플랫폼 서비스", "아이디어 개발과 그룹 의사결정을 위한 AI 플랫폼", "항공"],
+						["Bolverk XR", "VR", "VR, AR, MR 기술을 사용한 교육 시스템", "항공"],
+						["Smooss", "플랫폼 서비스", "상품화 및 고객 관리 플랫폼", "항공"],
+						["Actiw Intralogistics", "로보틱스", "변형 및 개조되지 않은 트레일러 및 컨테이너에 대한 완전 자동화된 원샷 적재 솔루션", "물류"],
+						["Dexterity, Inc.", "로보틱스", "이행능력, pick-&-place , 팔레타이징에 대해 인간과 같은 손재주를 가지는 AI 로봇 솔루션", "물류"],
+						["Dorabot", "로보틱스", "물류 및 전자상거래를 위한 AI 기반의 로보틱 솔루션", "물류"],
+						["Navflex", "로보틱스", "스마트 로지스틱 자동화", "물류"],
+						["Pickle Robotics", "로보틱스", "저비용 협업형 패키지 처리 로봇", "물류"],
+						["Slip Robotics", "로보틱스", "단거리 물류 비효율성 개선을 위한 서비스형 로봇(RaaS) 솔루", "물류"],
+						["Deeyook", "플랫폼 서비스", "무선 기반, 기반시설 없이 저전력의 정확한 실/내외 위치 탐지 솔루션을 제공", "물류"],
+						["Intrasys RFID Solutions", "IoT", "중요 자산 배치의 식별, 추적, 관리 및 최적화를 할 수 있는 RFID 기술 솔루션", "물류"],
+						["Moeco", "플랫폼 서비스", "배송 상태 추적 및 모니터링 솔루션", "물류"],
+						["NanoThings", "플랫폼 서비스", "원산지에서 매장까지의 추적 솔루션", "물류"],
+						["Oriient", "플랫폼 서비스", "실내 위치 포착(Indoor Positioning) 솔루션", "물류"],
+						["Roambee", "IoT", "IoT 기반의 기업급 자산 위치 추적 및 관리 솔루션", "물류"],
+						["Savi Technology", "플랫폼 서비스", "실시간 기반의 운송 중인 상품의 위치, 상태 및 보안 관리 솔루션", "물류"],
+						["Sigfox", "네트워크", "낮은 처리량을 요구하는 연결된 객체들을 위한 전용 셀룰러 네트워크를 운영함", "물류"],
+						["ThingTech", "플랫폼 서비스", "기업 자산 관리 플랫폼 서비스", "물류"],
+						["Tive", "플랫폼 서비스", "실시간 배송 위치 및 상태 추적 클라우드 솔루션", "물류"],
+						["WISER Systems", "플랫폼 서비스", "기업의 중요 자산을 추적 솔루션", "물류"],
+						["IAM Robotics", "로보틱스", "물류센터 픽업/분류 등 로봇팔 제작", "물류"],
+						["Berkshire Grey", "로보틱스", "물류센터 픽업/분류 등 로봇 제작", "물류"],
+						["Grabit", "로보틱스", "물류센터 로봇 및 컨베이어 제작", "물류"],
+						["Vecna Robotics", "로보틱스", "물류센터내 상품 분류/운송 로봇", "물류"],
+						["Fetch Robotics", "로보틱스", "물류센터내 상품 분류/운송 로봇", "물류"],
+						["Seegrid", "로보틱스", "물류센터내 비전인식 자율주행 로봇", "물류"],
+						["Locus Robotics", "로보틱스", "물류센터내 상품 분류/운송 로봇", "물류"],
+						["ATTAbotics", "로보틱스", "풀필먼트 창고 설계, 제조, 설치", "물류"],
+						["LogiNext", "모빌리티", "실시간 최적화 배송경로 제공", "물류"],
+						["Wise Systems", "모빌리티", "실시간 최적화 배송경로 제공", "물류"],
+						["Scandit", "데이터 분석", "스캐닝, 문자인식 소프트웨어(모바일)", "물류"],
+						["AVRL", "데이터 분석", "자연언어(음성) 인식 플랫폼 제공", "물류"],
+						["Datch", "데이터 분석", "음성인식 기능을 사내 시스템에 연결", "물류"],
+						["Fero Ai", "데이터 분석", "음성인식 지능형 물류관리 플랫폼", "물류"],
+						["Froglabs", "AI", "AI를 통해 날씨정보를 공급망에 적용", "물류"],
+						["OneClick", "AI", "AI 프로그램 구축 플랫폼 제공", "물류"],
+						["RealityEngines.AI", "데이터 분석", "AI, 딥러닝 활용 Data 분석/수요예측", "물류"],
+						["Prevedere", "데이터 분석", "산업(소비재, 소매, 여행 등) 예측", "물류"],
+						["OpenLegacy", "플랫폼 서비스", "API 등 데이터 접근/처리 서비스", "물류"],
+						["RapidAPI", "플랫폼 서비스", "API Marketplace (공용 API 연결)", "물류"],
+						["Withlocals", "플랫폼 서비스", "현지인이 직접 판매 가능한 여행 상품 P2P 마켓 플랫폼", "IT"],
+						["Axway", "플랫폼 서비스", "다중 엔터프라이즈 클라우드 통합, API 및 ID 관리 소프트웨어", "IT"],
+						["IndoorAtlas", "플랫폼 서비스", "전세계를 대상으로 실내 위치 정보를 기반으로 애플리케이션개발이 가능하도록 하는 솔루션", "IT"],
+						["AntWorks", "플랫폼 서비스", "비정형 문서 분류, 데이터 분석, 업무 규칙 적용 을 통해 전사적인 업무 디지털화를 가능하게 하는 솔루션", "IT"],
+						["nFlux", "데이터 분석", "영상 분석 플랫폼 서비스", "IT"],
+						["Unbabel", "데이터 분석", "다국어 지원 서비스", "IT"],
+						["Smartling", "플랫폼 서비스", "컨텐츠 생성 플렛폼 서비스", "IT"],
+						["Swarm Logistics", "플랫폼 서비스", "분산형 자율물류기구(DALO) 시스템을 통한 물류 체계화 솔루션", "물류"],
+						["FleetUp", "플랫폼 서비스", "Fleet Management, 360 Online Dashcam, 모바일 인력 관리, 자산 추적, ELD 준수 및 연료 폐기물 분석등이 가능한 올인원 솔루션", "물류"],
+						["KeepTruckin", "플랫폼 서비스", "트럭 운송 관리 플랙폼", "물류"],
+						["FourKites", "데이터 분석", "머신러닝기반을 통한 글로벌 공급망 최적화 및 사업 통찰력 제공", "물류"],
+						["FarEye", "플랫폼 서비스", "모빌리티, 데이터 분석, 자동화를 활용한 신속, 정확한 물류의 이동을 위한 SaaS 플랫폼", "물류"],
+						["Turvo", "플랫폼 서비스", "실시간 협업 물류 플랫폼", "물류"],
+						["Shipamax", "플랫폼 서비스", "공급망 가속화를 위한 RPA기반의 데이터 추출 시스템", "물류"],
+						["RPA Labs", "플랫폼 서비스", "공급망 / 물류 산업 비즈니스 프로세스 자동화를 위한 RPA 솔루션", "물류"],
+						["Automation Anywhere", "플랫폼 서비스", "엔터프라이즈급 인지형 RPA 플랫폼", "물류"],
+						["360 Stories", "VR", "AR/VR과 같은 새로운 몰입형 세일즈 체널에서 소비될 수 있는 컨텐츠 제작 솔루션", "여행"],
+						["Inflight VR", "VR", "여행산업에서 활용 될 수 있는 VR 환경 제공", "여행"],
+						["SkyLights", "VR", "비행기 내에서 시청 가능한 VR 시청각 컨텐츠", "여행"],
+						["Port", "플랫폼 서비스", "온디맨드 방식의 예약 플랫폼 및 상호작용가능한 화상연결을 통한 여행지 관광 및 이벤트 참여 솔루션", "여행"],
+						["BB-Trip", "모빌리티", "공항 셔틀 서비스", "여행"],
+						["Heycars", "모빌리티", "전 세계적으로 가장 집약적인 대응범위를 갖춘 자동차 서비스 플랫폼", "여행"],
+						["Welcome Pickups", "플랫폼 서비스", "A 지점과 B 지점 간 공항 환승에 대한 상품화된 서비스 제공을 통해 맞춤형 여행 경험을 제공", "여행"],
+						["Servantrip", "플랫폼 서비스", "전세계에서 모든 전송 서비스 및 시간대 별 운전 기사 예약등이 가능한 B2B 플랫폼", "여행"],
+						["Mozio", "플랫폼 서비스", "공항 운송 수단 검색 및 예약 솔루션", "여행"],
+						["Petner", "플랫폼 서비스", "여행객들을 대상으로 반려견을 맡길 수 있는 전문가들을 연결해주는 솔루션", "여행"],
+						["Wayo", "플랫폼 서비스", "펫시터 서비스", "여행"],
+						["Vaculex", "로보틱스", "인체공학적 진공 리프터를 통한 상하차 보조", "물류"],
+						["Ancara Systems", "로보틱스", "표준형부터 커스터마이즈까지 대응 가능한 자동 트럭 상하차 솔루션", "물류"],
+						["Duro Felguera", "로보틱스", "Stacker Cranes, Support Systems, Dimensional Controls등 물류 서비스에 필요한 대부분의 솔루션을 제공중", "물류"]
+					]
+
+				, commonCode: [
+
+				]
+
+			}
+
+  </script>
+
+</body>
+
+</html>

@@ -81,3 +81,58 @@ table.type04 {
     max-height : 650px;
     margin: 0 auto;
   }
+
+  .btn-get-started {
+    font-family: "Jost", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 28px 11px 28px;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin: 10px 0 0 0;
+    color: #fff;
+    background: #47b2e4;
+  }
+  
+
+
+/*--------------------------------------------------------------
+# Clients
+--------------------------------------------------------------*/
+.clients .clients-slider .swiper-slide img {
+  opacity: 0.7;
+  transition: 0.3s;
+}
+.clients .clients-slider .swiper-slide img:hover {
+  opacity: 1;
+}
+.clients .clients-slider .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+.clients .clients-slider .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  opacity: 1;
+  border: 1px solid #4154f1;
+}
+.clients .clients-slider .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #4154f1;
+}
+
+.clients .header-font h4 {
+  font-size: 24px;
+  margin: 0 0 20px 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 600;
+  color: #37517e;
+}
+
+#footer .header-font {
+  font-size: 15px;
+  color: #838282;
+}
