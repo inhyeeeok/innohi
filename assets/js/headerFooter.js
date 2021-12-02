@@ -59,7 +59,7 @@
 					+ "</ul>"
 					+ "</li>"
 				//	 + "<li><a class='nav-link scrollto' href='#contact'>Contact</a></li>"
-					+ "<li><a class='getstarted' onClick=''>협의체공간</a></li>"
+					+ "<li><a id='council' class='getstarted' onClick=''>협의체공간</a></li>"
 					+ "</ul>"
 					+ "<i class='bi bi-list mobile-nav-toggle'></i>"
 					+ "</nav>"
@@ -109,10 +109,22 @@
 					+ "</div>",
 
 		headerFooterGrid: function () {
+//			document.querySelector("#header").innerHTML += commonGrid.headerHtml;
 			document.querySelector("#header").insertAdjacentHTML("beforeend", commonGrid.headerHtml);
 			document.querySelector("#footer").insertAdjacentHTML("beforeend", commonGrid.footerHtml);
-		}
-	}
+		},
 
+		concilClickEvent: function(){
+			document.addEventListener("DOMContentLoaded", function (evt){
+				document.querySelector("#council").addEventListener("click", function (evt1){
+					alert('준비중입니다!🙋‍♀️');
+				})
+
+				
+			});
+		}
+
+	}
+	commonGrid.concilClickEvent();
 	commonGrid.headerFooterGrid();
 })()
