@@ -32,33 +32,70 @@
 
 	<main id="main">
 		<section id="breadcrumbs" class="breadcrumbs" style="background:#ffffff">
-
+	
 		</section>
 		<div>
 			<!-- <img src="../assets/img/innohi/banner_org1.jpg" class="img-fluid" alt=""> -->
 		</div>
-
+	
 		<!-- ======= About Us Section ======= -->
 		<section id="about" class="about">
 			<div class="container" data-aos="fade-up">
-	  
-			  <div class="section-title">
-				<h2 style="text-transform: capitalize;">오픈이노베이션 레터</h2>
-				<p>행사에 대한 고민은 많지만, 오늘도 바쁜 당신을 위해 오픈이노베이션 분야별 행사와 모임을 한 눈에 모아 봤습니다. 놓쳐선 안 될 행사와 함께 여러분의 메일함을 살며시 두드릴게요.
-					<br>우리, 한 주의 문을 활짝 여는 격주 금요일 아침에 만나요 🙋‍♀️
-				</p>
-			  </div>
-			  <table id="dataTable" class="type04" width="100%">
-			  </table>
+			
+				<div class="section-title" style="padding-bottom: 60px;">
+					<h2 style="text-transform: capitalize;">오픈이노베이션 레터</h2>
+					<p>행사에 대한 고민은 많지만, 오늘도 바쁜 당신을 위해 오픈이노베이션 분야별 행사와 모임을 한 눈에 모아 봤습니다. 놓쳐선 안 될 행사와 함께 여러분의 메일함을 살며시 두드릴게요.
+						<br>우리, 한 주의 문을 활짝 여는 격주 금요일 아침에 만나요 🙋‍♀️
+					</p>
+				</div>
+			
+				<div class="container">
+					<div class="table-responsive-md">
+						<table class="table table-bordered">
+							<thead style="background-color: rgba(242, 242, 242, 0.706);">
+								<tr align="center" >
+									<th width="10%">제목</th>
+									<th width="40%" colspan="3" >[이노하이레터#7] 11월4주차 뉴스레터 📭</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr  align="center">
+									<td>순번</td>
+									<td>4</td>
+									<td>조회수</td>
+									<td>1</td>
+								</tr>
+								<tr  align="center">
+									<td width="10%">작성일</td>
+									<td width="40%">2021-12-15 04:45:23</td>
+									<td width="10%">작성자</td>
+									<td width="40%">글쓴이</td>
+								</tr>
+								<tr>
+									<td colspan="4">
+										<iframe
+											src="https://oinewsletter.s3.ap-northeast-2.amazonaws.com/image/OI+%EB%89%B4%EC%8A%A4%EB%A0%88%ED%84%B0+1%EC%B0%A8+%EC%88%98%EC%A0%95%EC%95%88.html"
+											style="height:2830px; width:100%;" title="oi-newsletter"></iframe>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<table class="table table-condensed">
+							<thead>
+								<tr>
+										<span style='float:right'>
+											<button type="button" id="delete" class="btn btn-primary disabled">이전</button>
+											<button type="button" id="list" class="btn btn-primary">목록</button>
+											<button type="button" id="write" class="btn btn-primary active">다음</button>
+										</span>
+								</tr>
+							</thead>
+						</table>
+					</div>
+				</div>
 			</div>
 		</section><!-- End About Us Section -->
-
-		<!-- <section id="" class="inner-page">
-			<div class="container">
-			</div>
-		</section> -->
-
-
+	
 	</main>
 	<!-- End #main -->
 
@@ -105,8 +142,8 @@
 			var table = $('#dataTable').DataTable({
 			   data: testData.newletterData,
 			   columns: [
-				   { title: "순번", width: "5%" },
-				   { title: "내용", width: "70%" 
+				   { title: "순번", width: "20%" },
+				   { title: "내용", width: "60%" 
 				   ,
 				   "render": function(data, type, row){
                     /*
@@ -117,28 +154,19 @@
 						testData.startupSample.forEach((element, index, array) => {
 	//						console.log(element);
 						});
-//                        data = '<a href="'+ 'oi-newsletter.html?' + row[4]+'">' + data + '</a>';
+                        data = '<a href="'+ 'oi-newsletter.html?' + row[4]+'">' + data + '</a>';
                     }
                     return data;
 				}},
-				   { title: "날짜", width: "10%" },
-				   { title: "작성", width: "10%" },
-				   { title: "조회수", width: "5%" }
-				
+				   { title: "날짜", width: "20%" },
+				   { title: "작성", width: "20%" }
 			   ],
 
-			   createdRow: function (row, data, dataIndex) {
-//					console.log(row, data, dataIndex);
-					row.addEventListener('click', function () {
-					//	alert('준비중입니다!🛠️');
-						location.href='../views/newsletterDetail.html'
-					})
+			   createdRow: function(row, data, dataIndex){
+					console.log(row, data, dataIndex);
+					console.log(this);
 //					$('td:eq(1)', row).attr('colspan', 3);
-				},
-
-				drawCallback: function () {
-					document.getElementById('dataTable').firstElementChild.style.backgroundColor = '#f1f1f1b4';
-				},
+			   },
 
 				language: lang_kor,
 				responsive: true,
@@ -172,6 +200,7 @@
 			$('#dataTable > tbody > tr').unbind().bind('click', function () {
 	//			console.log(this)
 			});
+
 		}); 
 
 		var testData = {
@@ -319,14 +348,10 @@
 			]
 
 			, newletterData: [
-				["8", "[이노하이레터#11] 12월4주차 뉴스레터 📭", "2021-11-26", "admin", "9"],
-				["7", "[이노하이레터#10] 12월3주차 뉴스레터 📭", "2021-11-26", "admin", "6"],
-				["6", "[이노하이레터#9] 12월2주차 뉴스레터 📭", "2021-11-26", "admin", "7"],
-				["5", "[이노하이레터#8] 12월1주차 뉴스레터 📭", "2021-11-26", "admin", "21"],
-				["4", "[이노하이레터#7] 11월4주차 뉴스레터 📭", "2021-11-26", "admin", "10"],
-				["3", "[이노하이레터#6] 11월3주차 뉴스레터 📭", "2021-11-12", "admin", "5"],
-				["2", "[이노하이레터#5] 11월2주차 뉴스레터 📭", "2021-11-10", "admin", "12"],
-				["1", "[이노하이레터#4] 11월1주차 뉴스레터 📭", "2021-11-06", "admin", "1"],
+				["4", "오픈이노베이션 레터(11월 4주)", "2021-11-26", "admin"],
+				["3", "오픈이노베이션 레터(11월 3주)", "2021-11-12", "admin"],
+				["2", "오픈이노베이션 레터(11월 2주)", "2021-11-12", "admin"],
+				["1", "오픈이노베이션 레터(11월 1주)", "2021-11-12", "admin"],
 
 			]
 
